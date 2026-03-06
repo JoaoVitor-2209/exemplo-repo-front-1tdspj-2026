@@ -7,3 +7,114 @@ ex: lang= 'pt-BR", isso é um atributo que pode ir em qualquer tag de conteudo.
 <html lang="pt-BR">...</html> -->
 
 <html lang="pt-BR"> </html>
+<head>
+<meta charset="UTF-8">
+<title>Minha Loja Online</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f5f5f5;
+    margin:0;
+}
+
+header{
+    background:#222;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.produtos{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:30px;
+}
+
+.produto{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    width:200px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.produto img{
+    width:100%;
+}
+
+button{
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:10px;
+    margin-top:10px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#218838;
+}
+
+#carrinho{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🛒 Minha Loja Online</h1>
+</header>
+
+<div id="carrinho">
+Itens no carrinho: <span id="total">0</span>
+</div>
+
+<section class="produtos">
+
+<div class="produto">
+<img src="https://via.placeholder.com/200">
+<h3>Camiseta</h3>
+<p>R$ 50</p>
+<button onclick="comprar()">Comprar</button>
+</div>
+
+<div class="produto">
+<img src="https://via.placeholder.com/200">
+<h3>Tênis</h3>
+<p>R$ 200</p>
+<button onclick="comprar()">Comprar</button>
+</div>
+
+<div class="produto">
+<img src="https://via.placeholder.com/200">
+<h3>Boné</h3>
+<p>R$ 35</p>
+<button onclick="comprar()">Comprar</button>
+</div>
+
+</section>
+
+<script>
+let total = 0;
+
+function comprar(){
+    total++;
+    document.getElementById("total").innerText = total;
+    alert("Produto adicionado ao carrinho!");
+}
+</script>
+
+</body>
+</html>
